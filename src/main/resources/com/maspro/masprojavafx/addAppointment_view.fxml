@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #344e41;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.maspro.masprojavafx.AddAppointmentController">
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a3b18a" height="80.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1366.0" />
+        <Group layoutX="1153.0" layoutY="10.0">
+            <children>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff3535" height="60.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="200.0" />
+                <Text layoutX="32.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOGOUT">
+                    <font>
+                        <Font name="Arial Bold" size="32.0" />
+                    </font>
+                </Text>
+                <Button fx:id="fxLogout" mnemonicParsing="false" onAction="#onLogoutClicked" opacity="0.0" prefHeight="60.0" prefWidth="200.0" text="LOGOUT">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+            </children>
+        </Group>
+        <Group layoutX="10.0" layoutY="10.0">
+            <children>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dad7cd" height="60.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="200.0" />
+                <Text layoutX="52.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HOME">
+                    <font>
+                        <Font name="Arial Bold" size="32.0" />
+                    </font>
+                </Text>
+                <Button fx:id="fxHome" mnemonicParsing="false" onAction="#onHomeClicked" opacity="0.0" prefHeight="60.0" prefWidth="200.0" text="HOME">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor></Button>
+            </children>
+        </Group>
+      <Group layoutX="186.0" layoutY="140.0">
+         <children>
+              <Text fill="WHITE" layoutX="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add appointment form">
+                  <font>
+                      <Font name="Arial Bold" size="30.0" />
+                  </font>
+              </Text>
+            <Text fill="WHITE" layoutX="48.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicle">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="750.0" layoutY="56.052734375" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="720.0" layoutY="244.052734375" strokeType="OUTSIDE" strokeWidth="0.0" text="Technicians">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="41.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Services">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Text>
+            <TextField fx:id="fxRegistration" layoutX="-69.0" layoutY="89.0" onAction="#onRegistrationInputted" prefHeight="50.0" prefWidth="300.0" promptText="Registration">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Group layoutX="255.0" layoutY="100.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dad7cd" height="30.0" stroke="#8fff37" strokeType="INSIDE" strokeWidth="0.0" width="150.0" />
+                  <Text layoutX="33.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add vehicle">
+                     <font>
+                        <Font name="Arial" size="16.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="fxAddVehicle" mnemonicParsing="false" opacity="0.0" prefHeight="30.0" prefWidth="150.0" text="Add vehicle">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </Group>
+            <DatePicker fx:id="fxDateInput" disable="true" editable="false" layoutX="622.0" layoutY="90.158203125" onMouseClicked="#onDateChange" prefHeight="50.0" prefWidth="300.0" promptText="Date of the appointment">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </DatePicker>
+            <Group layoutX="966.0" layoutY="97.158203125">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8fff37" height="30.0" stroke="#8fff37" strokeType="INSIDE" strokeWidth="0.0" width="150.0" />
+                  <Text layoutX="30.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm date">
+                     <font>
+                        <Font name="Arial" size="16.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="fxConfirmDateBtn" mnemonicParsing="false" onAction="#onConfirmDateClicked" opacity="0.0" prefHeight="30.0" prefWidth="150.0" text="Confirm date">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </Group>
+            <ComboBox fx:id="fxServiceBox" layoutX="-70.0" layoutY="279.0" onAction="#onServiceChosen" prefHeight="50.0" prefWidth="300.0" promptText="Chooose services" visibleRowCount="4" />
+            <ComboBox fx:id="fxTechnicianBox" disable="true" layoutX="623.0" layoutY="278.158203125" onAction="#onTechnicianChosen" prefHeight="50.0" prefWidth="300.0" promptText="Choose technicians">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ComboBox>
+            <ListView fx:id="fxServicesChosen" focusTraversable="false" layoutX="-69.0" layoutY="342.0" prefHeight="200.0" prefWidth="300.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ListView>
+            <ListView fx:id="fxTechniciansChosen" focusTraversable="false" layoutX="623.0" layoutY="342.158203125" prefHeight="200.0" prefWidth="300.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ListView>
+            <Group layoutX="375.0" layoutY="565.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8fff37" height="40.0" stroke="#8fff37" strokeType="INSIDE" strokeWidth="0.0" width="200.0" />
+                  <Text layoutX="61.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="fxConfirmBtn" mnemonicParsing="false" onAction="#onConfirmClicked" opacity="0.0" prefHeight="40.0" prefWidth="200.0" text="Confirm">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </Group>
+            <Text fill="WHITE" layoutX="716.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hour">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="703.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Minutes">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="fxVehicleError" fill="RED" layoutX="33.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unknown vehicle" visible="false">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Text>
+            <Text fx:id="fxDateError" fill="RED" layoutX="742.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid date" visible="false">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Text>
+            <Group layoutX="255.0" layoutY="289.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8fff37" height="30.0" stroke="#8fff37" strokeType="INSIDE" strokeWidth="0.0" width="150.0" />
+                  <Text layoutX="15.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm services">
+                     <font>
+                        <Font name="Arial" size="16.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="fxConfirmServicesBtn" mnemonicParsing="false" onAction="#onConfirmServicesClicked" opacity="0.0" prefHeight="30.0" prefWidth="150.0" text="Confirm services">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </Group>
+            <TextField fx:id="fxHourInput" disable="true" layoutX="792.0" layoutY="145.158203125" onMouseClicked="#onHourChange" prefHeight="20.0" prefWidth="100.0" />
+            <TextField fx:id="fxMinuteInput" disable="true" layoutX="792.0" layoutY="176.158203125" onMouseClicked="#onMinuteChange" prefHeight="20.0" prefWidth="100.0" />
+            <Text fx:id="fxNoTechniciansError" fill="RED" layoutX="930.0" layoutY="296.294921875" strokeType="OUTSIDE" strokeWidth="0.0" text="No technicians for provided date" visible="false">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Text>
+            <Text fx:id="fxFormError" fill="RED" layoutX="394.0" layoutY="527.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Form contains errors" visible="false">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Text>
+            <Text fx:id="fxMaxTechniciansError" fill="RED" layoutX="937.0" layoutY="370.294921875" strokeType="OUTSIDE" strokeWidth="0.0" text="max 4 technicians" visible="false">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Text>
+            <Text fx:id="fxNoServicesChosen" fill="RED" layoutX="255.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No services chosen" visible="false">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Text>
+         </children>
+      </Group>
+    </children>
+</Pane>
